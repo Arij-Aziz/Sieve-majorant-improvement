@@ -97,3 +97,17 @@ Core/
 Future/                           ← Scaffolding; not part of proof chain
 AssumptionsRegistry.lean          ← Complete proof-status inventory
 ```
+## Citation
+
+If this formalization or the underlying theory assists your research, please consider citing both the foundational paper and this repository.
+
+**The Foundational Paper:**
+```bibtex
+@misc{aziz_foundations_2026,
+  author       = {Arij Aziz},
+  title        = {Foundations of Finitary Physical Mathematics and the Resolution of ZFC Pathologies},
+  year         = {2026},
+  publisher    = {Zenodo},
+  doi          = {10.5281/zenodo.19634093},
+  url          = {[https://doi.org/10.5281/zenodo.19634093](https://doi.org/10.5281/zenodo.19634093)}
+}
