@@ -1,12 +1,3 @@
-This project was edited by [Aristotle](https://aristotle.harmonic.fun).
-
-To cite Aristotle:
-- Tag @Aristotle-Harmonic on GitHub PRs/issues
-- Add as co-author to commits:
-```
-Co-authored-by: Aristotle (Harmonic) <aristotle-harmonic@harmonic.fun>
-```
-
 # Selberg Improvement: A Lean 4 Formalization
 
 Machine-verified proofs of three results in Selberg sieve theory,
@@ -71,7 +62,7 @@ This project is a human–AI collaboration.
 
 - ~40% human: mathematical direction, theorem statements, proof strategies, novelty
   identification, scope decisions.
-- ~60% AI-assisted: tactic search, proof elaboration, infrastructure lemmas,
+- ~60% AI-assisted Aristotle, GPT5.4 via perplexity: tactic search, proof elaboration, infrastructure lemmas,
   helper definitions.
 
 All mathematical claims were decided and verified by the human author.
