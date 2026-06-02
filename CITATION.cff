@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this formalization or software, please cite it as below."
+authors:
+  - family-names: "Aziz"
+    given-names: "Arij"
+    email: "saziz.bee22seecs@seecs.edu.pk"
+    affiliation: "Independent Research, Pakistan"
+title: "Rigidity of the Selberg Majorant: Stability, Restriction, and a Quadratic Form Identity (Lean 4 Formalization)"
+version: 1.0.0
+doi: 10.5281/zenodo.20513472
+date-released: 2026-06-02
+url: "https://github.com/Arij-Aziz/Sieve-majorant-improvement"
+repository-code: "https://github.com/Arij-Aziz/Sieve-majorant-improvement"
