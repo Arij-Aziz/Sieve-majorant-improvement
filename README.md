@@ -99,15 +99,19 @@ AssumptionsRegistry.lean          ← Complete proof-status inventory
 ```
 ## Citation
 
-If this formalization or the underlying theory assists your research, please consider citing both the foundational paper and this repository.
+If you use this work, please cite:
 
-**The Foundational Paper:**
+> Aziz, A. (2026). *Rigidity of the Selberg Majorant: Stability, Restriction, and a Quadratic Form Identity with Machine-Verified Proofs*. Zenodo. [https://doi.org/10.5281/zenodo.20515354](https://doi.org/10.5281/zenodo.20515354)
+
+### BibTeX
+
 ```bibtex
-@misc{aziz_foundations_2026,
-  author       = {Arij Aziz},
-  title        = {Foundations of Finitary Physical Mathematics and the Resolution of ZFC Pathologies},
+@misc{aziz2026selberg,
+  author       = {Aziz, Arij},
+  title        = {Rigidity of the {S}elberg Majorant: Stability, Restriction,
+                  and a Quadratic Form Identity with Machine-Verified Proofs},
   year         = {2026},
   publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.19634093},
-  url          = {[https://doi.org/10.5281/zenodo.19634093](https://doi.org/10.5281/zenodo.19634093)}
+  doi          = {10.5281/zenodo.20515354},
+  url          = {https://doi.org/10.5281/zenodo.20515354}
 }
