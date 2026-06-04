@@ -79,7 +79,11 @@ For any nonneg ν on Fin(N) dominating the 0-1 indicator of a set S:
     mass(ν)² · ‖ν‖₂²  ≥  |S|⁴ / N
 
 Proved from Cauchy–Schwarz and pointwise domination alone. The proof is
-elementary and does not use Fourier analysis. Instantiated for the Selberg
+elementary and does not use Fourier analysis. A Fourier restatement
+(`restriction_lower_bound_zero_mode`) is also verified,
+showing the same bound is equivalent to a zero-frequency energy condition via
+Parseval — but this is a restatement of the spatial proof, not an independent
+Fourier argument. Instantiated for the Selberg
 majorant:
 
     mass(ν)² · ‖ν‖₂²  ≥  (dm − m)⁴ / (dm)
