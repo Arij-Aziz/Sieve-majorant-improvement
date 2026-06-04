@@ -1,12 +1,12 @@
--- SieveFormalization: Core verified results
--- Three theorems about the Selberg sieve, machine-verified in Lean 4 / Mathlib.
+-- Selberg Majorant Improvement: Machine-verified formalization
+-- Paper: "Rigidity of the Selberg Majorant: Stability, Restriction,
+--         and a Quadratic Form Identity with Machine-Verified Proofs"
 --
--- Paper 1 (Kinetic Propagation):     Core/KineticPropagation.lean
--- Paper 2 (Restriction Lower Bound): Core/RestrictionLowerBound.lean
--- Paper 3 (Fourier–Sieve Identity):  Core/Weights/FourierConnection.lean
+-- Axiom audit: RequestProject/Audit.lean
+-- All 13 main theorems depend only on [propext, Classical.choice, Quot.sound].
+-- Zero sorry.
 --
 -- Future/ contains scaffolding for future work.
--- Nothing there is part of the proof chain for Papers 1–3.
 
 -- ── Core sieve infrastructure ───────────────────────────────────────────────
 import RequestProject.Core.Basic
@@ -33,6 +33,9 @@ import RequestProject.Core.Weights.FourierConnection
 
 -- ── Central registry ─────────────────────────────────────────────────────────
 import RequestProject.AssumptionsRegistry
+
+-- ── Audit ─────────────────────────────────────────
+import RequestProject.Audit
 
 -- ── Future work (not part of current proof chain) ────────────────────────────
 -- Uncomment to build scaffolding:
