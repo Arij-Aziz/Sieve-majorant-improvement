@@ -5,7 +5,7 @@
 Machine-verified proofs of four independent results about a single-prime
 model of the Selberg sieve, formalized in Lean 4 using Mathlib. Zero `sorry`;
 axiom footprint verified as `[propext, Classical.choice, Quot.sound]` for all
-18 theorems (see `RequestProject/Audit.lean`).
+20 theorems (see `RequestProject/Audit.lean`).
 
 ## What This Project Is
 
@@ -97,6 +97,20 @@ Combined with the baseline upper bound from Theorem 1:
 The Selberg majorant satisfies both bounds simultaneously. This is a
 numerical fact about the single-prime construction, not a characterization.
 
+**Selberg Upper Bound Infrastructure**
+(`Core/Weights/UpperBound.lean`)
+
+The fundamental inequality of the Selberg sieve is machine-verified in
+full generality for arbitrary `SieveData`:
+
+    |S(A, P)|  ≤  Q_A(λ)  =  Σ_{n ∈ A} (Σ_{d ∈ D, d | gcd(n,P)} λ_d)²
+
+This holds for any λ with λ₁ = 1, any finite support D containing 1,
+and any number of sieving primes. It is not restricted to the single-prime
+model. The error separation bound Σ λ_d R_d ≤ Σ |λ_d| |R_d| is also
+verified. These are the two inequalities that together constitute the
+Selberg sieve upper bound method (cf. Iwaniec–Kowalski, Theorem 7.1).
+
 **Theorem 3 — Kinetic Propagation**
 (`Core/KineticPropagation.lean`)
 
@@ -143,7 +157,7 @@ a straightforward consequence of Cauchy–Schwarz.
 
 ## Axiom Audit
 
-All 18 theorems verified with `#print axioms` (see `RequestProject/Audit.lean`):
+All 20 theorems verified with `#print axioms` (see `RequestProject/Audit.lean`):
 
 ```
 ── Theorem 1 ────────────────────────────────────────────────────────────────
@@ -156,6 +170,10 @@ sieveMajorant_l2NormSq_eq_selbergForm   → [propext, Classical.choice, Quot.sou
 restriction_lower_bound                 → [propext, Classical.choice, Quot.sound]
 sieve_additive_energy_lower             → [propext, Classical.choice, Quot.sound]
 restriction_lower_bound_zero_mode       → [propext, Classical.choice, Quot.sound]
+
+── Selberg upper bound ──────────────────────────────────────────────────────
+siftedSet_card_le_quadraticSum          → [propext, Classical.choice, Quot.sound]
+weighted_remainder_bound                → [propext, Classical.choice, Quot.sound]
 
 ── Theorem 3 ────────────────────────────────────────────────────────────────
 perturbation_propagates                 → [propext, Classical.choice, Quot.sound]
