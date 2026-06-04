@@ -81,7 +81,23 @@ main_results:
       Kinetic Propagation Theorem: if |f(p) − g(p)| ≤ ε at every sieving prime,
       then for squarefree d with ω(d) prime factors each bounded by M,
       |f(d) − g(d)| ≤ ε · ω(d) · M^(ω(d)−1). Pointwise, exact, no big-O.
+      
+  - name: siftedSet_card_le_quadraticSum
+    file: RequestProject/Core/Weights/UpperBound.lean
+    description: >
+      The fundamental Selberg upper bound inequality: for any λ with λ₁ = 1
+      and 1 ∈ D, the sifted set satisfies |S(A,P)| ≤ Q_A(λ) where Q_A(λ)
+      = Σ_{n ∈ A} (Σ_{d ∈ D, d | gcd(n,P)} λ_d)². Proved for general
+      SieveData with arbitrarily many sieving primes. This is the machine-
+      verified form of the inequality |S(A,P)| ≤ Q_A(λ) in Iwaniec–Kowalski.
 
+  - name: weighted_remainder_bound
+    file: RequestProject/Core/Weights/UpperBound.lean
+    description: >
+      For any λ and remainder function R: Σ_d λ_d · R_d ≤ Σ_d |λ_d| · |R_d|.
+      Algebraic infrastructure lemma for separating the main term and error
+      term in the Selberg sieve upper bound.
+      
   - name: eulerProduct_stability
     file: RequestProject/Core/KineticPropagation.lean
     description: >
@@ -133,9 +149,9 @@ main_results:
 audit:
   file: RequestProject/Audit.lean
   date: "2026-06-04"
-  theorem_count: 18
+  theorem_count: 20
   output: >
-    All 18 theorems verified with #print axioms.
+    All 20 theorems verified with #print axioms.
     Every theorem depends only on [propext, Classical.choice, Quot.sound].
     Zero sorry.
 
