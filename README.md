@@ -1,3 +1,5 @@
+[![Build](https://github.com/Arij-Aziz/Sieve-majorant-improvement/actions/workflows/build.yml/badge.svg)](https://github.com/Arij-Aziz/Sieve-majorant-improvement/actions/workflows/build.yml)
+
 # Selberg Majorant Improvement: A Lean 4 Formalization
 
 Machine-verified proofs of four independent results about a single-prime
