@@ -17,17 +17,23 @@ main_results:
       For d ≥ 2, m ≥ 1, the Selberg-shaped majorant ν(x) = 1 if d∤x, ν(x) = 1/2 if d∣x
       on Fin(d·m) has strictly smaller L¹ mass than the constant baseline ν₀ ≡ 1.
 
+  - name: sieveMajorant_l2_improvement
+    file: RequestProject/Core/Weights/FourierConnection.lean
+    description: >
+      For d ≥ 2, m ≥ 1, the Selberg majorant has strictly smaller L² norm
+      than the constant baseline.
+
   - name: selbergComparison_dual_improvement
     file: RequestProject/Core/Weights/FourierConnection.lean
     description: >
-      For d ≥ 2, m ≥ 1, the Selberg majorant simultaneously achieves strict mass
-      and strict L² improvement over the constant baseline.
+      For d ≥ 2, m ≥ 1, the Selberg majorant simultaneously achieves strict
+      mass and strict L² improvement over the constant baseline.
 
   - name: sieveMajorant_l2NormSq_eq_selbergForm
     file: RequestProject/Core/Weights/FourierConnection.lean
     description: >
       The normalized spatial L² norm satisfies ‖ν‖₂²/(d·m) = 1 − 3/(4d),
-      which equals the Selberg quadratic form Q(λ) at λ₁ = 1, λ_d = −1/2.
+      equal to the Selberg quadratic form Q(λ) at λ₁ = 1, λ_d = −1/2.
 
   - name: restriction_lower_bound
     file: RequestProject/Core/RestrictionLowerBound.lean
@@ -36,11 +42,37 @@ main_results:
       mass(ν)² · ‖ν‖₂² ≥ |S|⁴ / N.
       Proved from Cauchy–Schwarz and pointwise domination alone; no Fourier hypothesis.
 
+  - name: sieve_additive_energy_lower
+    file: RequestProject/Core/RestrictionLowerBound.lean
+    description: >
+      For any nonneg majorant ν dominating indicator of S on Fin(N):
+      E(ν) ≥ targetMass⁴ / N³.
+
+  - name: restriction_lower_bound_zero_mode
+    file: RequestProject/Core/RestrictionLowerBound.lean
+    description: >
+      Fourier reformulation of the restriction lower bound via Parseval:
+      targetMass⁴ ≤ N · mass² · ‖ν̂‖₂² / N.
+
   - name: selberg_restriction_lower_bound_explicit
     file: RequestProject/Core/SelbergRestriction.lean
     description: >
-      Concrete instantiation: for d ≥ 2, m ≥ 1,
-      mass(ν)² · ‖ν‖₂² ≥ (d·m − m)⁴ / (d·m).
+      Concrete instantiation for the Selberg majorant:
+      mass(ν)² · ‖ν‖₂² ≥ (dm − m)⁴ / (dm).
+
+  - name: selberg_additive_energy_explicit
+    file: RequestProject/Core/SelbergRestriction.lean
+    description: >
+      Additive energy lower bound for the Selberg majorant:
+      E(ν) ≥ (dm − m)⁴ / (dm)³.
+
+  - name: selberg_mass_energy_interval
+    file: RequestProject/Core/SelbergRestriction.lean
+    description: >
+      The mass-energy product of the Selberg majorant lies strictly between
+      the restriction lower bound and the baseline upper bound:
+      (dm−m)⁴/(dm) ≤ mass(ν)²·‖ν‖₂² < (dm)³.
+      This is the machine-verified form of the Section 6 interdependence claim.
 
   - name: perturbation_propagates
     file: RequestProject/Core/KineticPropagation.lean
@@ -64,8 +96,9 @@ main_results:
 audit:
   file: RequestProject/Audit.lean
   date: "2026-06-04"
+  theorem_count: 13
   output: >
-    All 12 theorems verified with #print axioms.
+    All 13 theorems verified with #print axioms.
     Every theorem depends only on [propext, Classical.choice, Quot.sound].
     Zero sorry.
 
