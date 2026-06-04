@@ -154,7 +154,7 @@ RequestProject/
     ├── KineticPropagation.lean       ← Theorem 3
     ├── Fourier.lean                  ← DFT, Parseval, additive energy
     ├── FourierRatio.lean             ← mass² · ‖ν‖₂² tradeoff
-    ├── Transference.lean             ← Transference infrastructure
+    ├── Transference.lean             ← Pseudorandomness structures (scaffolding only, no transference theorem proved)
     └── Weights/
         ├── Definition.lean           ← SelbergWeights structure
         ├── Bounds.lean
