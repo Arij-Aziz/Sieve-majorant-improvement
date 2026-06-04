@@ -105,4 +105,31 @@ theorem selberg_additive_energy_explicit
   · rw [ sieveMajorant_targetMass d m ( by positivity ) ( by positivity ) ] ; norm_cast;
   · positivity
 
+/-- **The three constraints are simultaneously active on the Selberg majorant.**
+    The mass-energy product lies strictly between the restriction lower bound
+    and the baseline upper bound. This is the central claim of Section 6. -/
+theorem selberg_mass_energy_interval (d m : ℕ) (hd : 2 ≤ d) (hm : 1 ≤ m) :
+    let hN := show 0 < d * m by positivity
+    let M := sieveMajorant d m hN
+    ((d * m - m : ℕ) : ℝ) ^ 4 / (d * m) ≤ M.mass ^ 2 * M.l2NormSq
+    ∧ M.mass ^ 2 * M.l2NormSq < (d * m : ℝ) ^ 3 := by
+  constructor
+  · exact selberg_restriction_lower_bound_explicit d m hd hm
+  · have hN : 0 < d * m := by positivity
+    have hmass := sieveMajorant_mass d m (by omega) hN
+    have hl2 := sieveMajorant_l2NormSq d m hd hm hN
+    have hm_pos : (0 : ℝ) < m := by exact_mod_cast (show 0 < m by omega)
+    have hd_pos : (0 : ℝ) < d := by exact_mod_cast (show 0 < d by omega)
+    have h1 : (sieveMajorant d m hN).mass ^ 2 * (sieveMajorant d m hN).l2NormSq
+            = (↑d * ↑m - ↑m / 2) ^ 2 * (↑d * ↑m - 3 * ↑m / 4) := by
+      rw [hmass, hl2]
+    rw [h1]
+    nlinarith [sq_nonneg ((d : ℝ) * m - m / 2),
+               mul_pos hd_pos hm_pos,
+               mul_pos (mul_pos hd_pos hm_pos) hm_pos,
+               mul_pos (mul_pos hd_pos hd_pos) (mul_pos hm_pos hm_pos),
+               sq_nonneg ((d : ℝ) * m),
+               sq_nonneg (m : ℝ),
+               mul_pos hd_pos (mul_pos hd_pos hm_pos)]
+
 end
