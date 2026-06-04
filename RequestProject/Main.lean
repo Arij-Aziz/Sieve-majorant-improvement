@@ -21,14 +21,14 @@ import RequestProject.Core.Fourier
 import RequestProject.Core.FourierRatio
 import RequestProject.Core.Transference
 
--- ── Paper 1: Kinetic Propagation ────────────────────────────────────────────
+-- ── Theorem 1: Kinetic Propagation ────────────────────────────────────────────
 import RequestProject.Core.KineticPropagation
 
--- ── Paper 2: Restriction Lower Bound ────────────────────────────────────────
+-- ── Theorem 2: Restriction Lower Bound ────────────────────────────────────────
 import RequestProject.Core.RestrictionLowerBound
 import RequestProject.Core.SelbergRestriction
 
--- ── Paper 3: Fourier–Sieve Identity ─────────────────────────────────────────
+-- ── Theorem 3: Fourier–Sieve Identity ─────────────────────────────────────────
 import RequestProject.Core.Weights.FourierConnection
 
 -- ── Central registry ─────────────────────────────────────────────────────────
