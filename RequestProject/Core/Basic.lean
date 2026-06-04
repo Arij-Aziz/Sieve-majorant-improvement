@@ -37,7 +37,7 @@ structure SieveData where
   hf_one : f 1 = 1
   hf_mult : ∀ d e : ℕ, Squarefree d → Squarefree e → Nat.Coprime d e →
     f (d * e) = f d * f e
-  hf_pos : ∀ p, sievingPrime p → f p > 1
+  hf_pos : ∀ p, sievingPrime p → 0 < f p
   hX_pos : X > 0
 
 attribute [instance] SieveData.sievingPrimeDec
