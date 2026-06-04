@@ -161,7 +161,7 @@ eulerProduct_stability                  → [propext, Classical.choice, Quot.sou
 sieveH_stable                           → [propext, Classical.choice, Quot.sound]
 
 ── Instantiations ───────────────────────────────────────────────────────────
-selberg_restriction_lower_bound_explicit → [propext, Classical.choice, Quot.sound]
+selberg_restriction_lower_bound → [propext, Classical.choice, Quot.sound]
 selberg_additive_energy_explicit        → [propext, Classical.choice, Quot.sound]
 selberg_mass_energy_interval            → [propext, Classical.choice, Quot.sound]
 
