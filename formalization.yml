@@ -55,7 +55,7 @@ main_results:
       Shows the spatial bound is equivalent to a statement about zero-frequency
       Fourier energy.
 
-  - name: selberg_restriction_lower_bound_explicit
+  - name: selberg_restriction_lower_bound
     file: RequestProject/Core/SelbergRestriction.lean
     description: >
       Concrete instantiation for the Selberg majorant:
