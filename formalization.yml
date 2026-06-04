@@ -50,8 +50,10 @@ main_results:
   - name: restriction_lower_bound_zero_mode
     file: RequestProject/Core/RestrictionLowerBound.lean
     description: >
-      Fourier reformulation of the restriction lower bound via Parseval:
-      targetMass⁴ ≤ N · mass² · ‖ν̂‖₂² / N.
+      Restatement of restriction_lower_bound in Fourier language via Parseval.
+      No new inequality is proved; the core bound is Cauchy–Schwarz only.
+      Shows the spatial bound is equivalent to a statement about zero-frequency
+      Fourier energy.
 
   - name: selberg_restriction_lower_bound_explicit
     file: RequestProject/Core/SelbergRestriction.lean
