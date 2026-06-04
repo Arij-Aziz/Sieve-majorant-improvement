@@ -20,7 +20,7 @@ import RequestProject.Core.SelbergComparison
 import RequestProject.Core.Fourier
 import RequestProject.Core.FourierRatio
 import RequestProject.Core.Transference
-
+import RequestProject.Core.Weights.QuadFormStability
 -- ── Theorem 1: Kinetic Propagation ────────────────────────────────────────────
 import RequestProject.Core.KineticPropagation
 
