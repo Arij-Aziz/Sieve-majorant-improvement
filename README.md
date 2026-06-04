@@ -35,8 +35,11 @@ The four results are:
    Lipschitz in f — if the density function is perturbed by ε at every
    squarefree divisor (controlled by the kinetic bound), then |Q(λ,f) −
    Q(λ,g)| is bounded by an explicit double sum. This is the theorem that
-   connects Theorem 3 to Theorem 1 in a single proof chain.
-
+   establishes that the quadratic form value identified in Theorem 1 is stable
+   under perturbations of the type controlled by Theorem 3 — providing the
+   structural link, though no explicit perturbation is instantiated in
+   the current scope.
+   
 ## What This Project Is Not
 
 - **Not the full Selberg sieve.** The concrete results (Theorems 1 and 2)
@@ -85,7 +88,7 @@ Combined with the baseline upper bound from Theorem 1:
 
     (dm − m)⁴ / (dm)  ≤  mass(ν)² · ‖ν‖₂²  <  (dm)³
 
-The Selberg majorant lies strictly inside this interval. This is a
+The Selberg majorant satisfies both bounds simultaneously. This is a
 numerical fact about the single-prime construction, not a characterization.
 
 **Theorem 3 — Kinetic Propagation**
@@ -110,9 +113,9 @@ is Lipschitz in f: if the kinetic propagation bound of Theorem 3 controls
 
     |Q(λ, f) − Q(λ, g)|  ≤  explicit double sum in ε
 
-This is the proof-chain connection between Theorems 1 and 3: the quadratic
-form whose value is identified in Theorem 1 is stable under exactly the
-perturbations controlled by Theorem 3. Without this theorem, the
+This is the proof-chain connection between Theorems 1 and 3: It establishes 
+that the quadratic form value identified in Theorem 1 is stable under 
+perturbations of the type controlled by Theorem 3. Without this theorem, the
 connection between Theorems 1 and 3 is narrative only.
 
 ## Scope of Novelty
