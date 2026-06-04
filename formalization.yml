@@ -92,12 +92,12 @@ main_results:
       The arithmetic H-functional H(f,D) = Σ (f(d)/d)·log(f(d)/d) is stable
       under prime-level perturbation, with Lipschitz constant via the MVT.
 
-        - name: Nat.Squarefree.lcm
+  - name: Nat.Squarefree.lcm
     file: RequestProject/Core/Weights/QuadFormStability.lean
     description: >
       The lcm of two squarefree natural numbers is squarefree.
-      Not present in Mathlib; proved from first principles via
-      coprimality reduction and squarefree_mul.
+      Proved from first principles via prime factorization and max of valuations.
+      Infrastructure lemma for quadForm_kinetic_stability.
 
   - name: inv_diff_bound
     file: RequestProject/Core/Weights/QuadFormStability.lean
@@ -111,6 +111,12 @@ main_results:
       Pointwise bound on each (d,e) term of the quadratic form difference:
       |λ_d·λ_e/f(n) − λ_d·λ_e/g(n)| ≤ |λ_d|·|λ_e|·|f(n)−g(n)|/(f(n)·g(n)).
 
+  - name: quadForm_term_bound
+    file: RequestProject/Core/Weights/QuadFormStability.lean
+    description: >
+      Per-term bound for quadForm_kinetic_stability: handles the squarefree
+      case split and applies quadForm_term_diff at each (d,e) pair.
+      
   - name: quadForm_kinetic_stability
     file: RequestProject/Core/Weights/QuadFormStability.lean
     description: >
