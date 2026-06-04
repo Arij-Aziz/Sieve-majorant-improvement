@@ -93,6 +93,36 @@ main_results:
       The arithmetic H-functional H(f,D) = Σ (f(d)/d)·log(f(d)/d) is stable
       under prime-level perturbation, with Lipschitz constant via the MVT.
 
+        - name: Nat.Squarefree.lcm
+    file: RequestProject/Core/Weights/QuadFormStability.lean
+    description: >
+      The lcm of two squarefree natural numbers is squarefree.
+      Not present in Mathlib; proved from first principles via
+      coprimality reduction and squarefree_mul.
+
+  - name: inv_diff_bound
+    file: RequestProject/Core/Weights/QuadFormStability.lean
+    description: >
+      For positive reals a, b: |1/a − 1/b| ≤ |a − b| / (a·b).
+      First-principles algebraic lemma; no Mathlib dependency.
+
+  - name: quadForm_term_diff
+    file: RequestProject/Core/Weights/QuadFormStability.lean
+    description: >
+      Pointwise bound on each (d,e) term of the quadratic form difference:
+      |λ_d·λ_e/f(n) − λ_d·λ_e/g(n)| ≤ |λ_d|·|λ_e|·|f(n)−g(n)|/(f(n)·g(n)).
+
+  - name: quadForm_kinetic_stability
+    file: RequestProject/Core/Weights/QuadFormStability.lean
+    description: >
+      The Selberg quadratic form Q(λ,f) is Lipschitz in f at the level of
+      squarefree divisors: if |f(n)−g(n)| is controlled by the kinetic
+      propagation bound at every squarefree n, then |Q(λ,f)−Q(λ,g)| is
+      bounded by an explicit double sum. This is the machine-verified
+      connection between Theorem 3 (kinetic propagation) and Theorem 1
+      (quadratic form identity) — the theorem that makes the
+      interdependence claim mathematically precise rather than narrative.
+
 audit:
   file: RequestProject/Audit.lean
   date: "2026-06-04"
