@@ -7,6 +7,7 @@ import RequestProject.Core.KineticPropagation
 import RequestProject.Core.RestrictionLowerBound
 import RequestProject.Core.Weights.FourierConnection
 import RequestProject.Core.SelbergRestriction
+import RequestProject.Core.Weights.QuadFormStability
 
 -- ── Theorem 1: Mass and L² improvement ──────────────────────────────────────
 #print axioms selbergComparison_massImprovement
@@ -28,3 +29,10 @@ import RequestProject.Core.SelbergRestriction
 #print axioms selberg_concrete_restriction_bound
 #print axioms selberg_additive_energy_explicit
 #print axioms selberg_mass_energy_interval
+
+-- ── Theorem 4: Quadratic form stability ──────────────────────────────────────
+#print axioms quadForm_kinetic_stability
+#print axioms quadForm_term_bound
+#print axioms quadForm_term_diff
+#print axioms inv_diff_bound
+#print axioms Nat.Squarefree.lcm
