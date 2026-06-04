@@ -214,5 +214,3 @@ RequestProject/
 Future/                               ← Scaffolding; not part of proof chain
 formalization.yml                     ← Machine-readable project metadata
 ```
-
-The title has also been changed from "Rigidity of the Selberg Majorant" to "Selberg Majorant Improvement: A Lean 4 Formalization" — the word "rigidity" implied a characterization result that the project does not prove.
