@@ -8,6 +8,7 @@ import RequestProject.Core.RestrictionLowerBound
 import RequestProject.Core.Weights.FourierConnection
 import RequestProject.Core.SelbergRestriction
 import RequestProject.Core.Weights.QuadFormStability
+import RequestProject.Core.Weights.UpperBound
 
 -- ── Theorem 1: Mass and L² improvement ──────────────────────────────────────
 #print axioms selbergComparison_massImprovement
@@ -19,6 +20,10 @@ import RequestProject.Core.Weights.QuadFormStability
 #print axioms restriction_lower_bound
 #print axioms sieve_additive_energy_lower
 #print axioms restriction_lower_bound_zero_mode
+
+-- ── Selberg upper bound infrastructure ───────────────────────────────────────
+#print axioms siftedSet_card_le_quadraticSum
+#print axioms weighted_remainder_bound
 
 -- ── Theorem 3: Kinetic propagation ──────────────────────────────────────────
 #print axioms perturbation_propagates
