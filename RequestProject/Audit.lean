@@ -27,3 +27,4 @@ import RequestProject.Core.SelbergRestriction
 -- ── Concrete instantiations ──────────────────────────────────────────────────
 #print axioms selberg_concrete_restriction_bound
 #print axioms selberg_additive_energy_explicit
+#print axioms selberg_mass_energy_interval
