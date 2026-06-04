@@ -73,7 +73,7 @@ each bounded by M:
 Pointwise, exact, no big-O. The partial Euler products and arithmetic
 H-functional are correspondingly stable under the same perturbation.
 
-## What Should Not be expected
+## Limitations
 
 - The concrete instantiations of Theorems 1 and 2 apply to the single-prime
   model only. Theorems 2 and 3 in abstract form are fully general.
