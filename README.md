@@ -105,11 +105,12 @@ full generality for arbitrary `SieveData`:
 
     |S(A, P)|  ≤  Q_A(λ)  =  Σ_{n ∈ A} (Σ_{d ∈ D, d | gcd(n,P)} λ_d)²
 
-This holds for any λ with λ₁ = 1, any finite support D containing 1,
-and any number of sieving primes. It is not restricted to the single-prime
-model. The error separation bound Σ λ_d R_d ≤ Σ |λ_d| |R_d| is also
-verified. These are the two inequalities that together constitute the
-Selberg sieve upper bound method (cf. Iwaniec–Kowalski, Theorem 7.1).
+The classical Selberg upper bound inequality |S(A,P)| ≤ Q_A(λ) is
+machine-verified for arbitrary `SieveData` with any number of sieving
+primes. This is a formalization of a standard result, included to
+demonstrate that the `SieveData` abstraction supports the full
+classical infrastructure and to provide reusable infrastructure for
+future extensions.).
 
 **Theorem 3 — Kinetic Propagation**
 (`Core/KineticPropagation.lean`)
@@ -216,7 +217,7 @@ Requires Lean toolchain `leanprover/lean4:v4.28.0` (see `lean-toolchain`).
 
 ```
 RequestProject/
-├── Audit.lean                        ← #print axioms for all 18 theorems
+├── Audit.lean                        ← #print axioms for all 20 theorems
 ├── AssumptionsRegistry.lean          ← Manually maintained proof-status log
 ├── Main.lean                         ← Top-level imports
 └── Core/
