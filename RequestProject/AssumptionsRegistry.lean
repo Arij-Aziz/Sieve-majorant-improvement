@@ -144,11 +144,11 @@ def assumptionsRegistry : List RegistryEntry := [
   -- Sieve.Transference (strengthened)
   { name := "StrongPseudorandomMajorant"
     module := "Sieve.Transference"
-    status := .ProvedInProject
+    status := .AssumedForProgram
     description := "Pseudorandom majorant with 2-point correlation condition" },
   { name := "StrongPseudorandomMajorant.total_weightedPairCount"
     module := "Sieve.Transference"
-    status := .ProvedInProject
+    status := .AssumedForProgram
     description := "Total weighted pair count = (Σ ν)²" },
 
   -- Sieve.FourierRatio (Parseval-based proof)
