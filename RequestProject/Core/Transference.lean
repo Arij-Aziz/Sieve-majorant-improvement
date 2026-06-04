@@ -7,7 +7,7 @@ target set.
 
 This is modeled on the Green–Tao transference framework.
 
-Status: ProvedInProject (abstract framework and basic implications)
+Status: AssumedForProgram (abstract framework and basic implications)
 -/
 import Mathlib
 
