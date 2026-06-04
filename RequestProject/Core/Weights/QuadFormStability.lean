@@ -41,8 +41,8 @@ lemma quadForm_term_diff (f g : ℕ → ℝ) (lam : ℕ → ℝ) (d e : ℕ)
     (h_kinetic : |f (Nat.lcm d e) - g (Nat.lcm d e)| ≤ K) :
     |lam d * lam e / f (Nat.lcm d e) - lam d * lam e / g (Nat.lcm d e)|
       ≤ |lam d| * |lam e| * K / (f (Nat.lcm d e) * g (Nat.lcm d e)) := by
-  convert mul_le_mul_of_nonneg_left ( inv_diff_bound ( f ( Nat.lcm d e ) ) ( g ( Nat.lcm d e ) ) K hf_pos hg_pos h_kinetic ) ( mul_nonneg ( abs_nonneg ( lam d ) ) ( abs_nonneg ( lam e ) ) ) using 1 ; ring;
-  · rw [ ← abs_mul, ← abs_mul ] ; ring;
+  convert mul_le_mul_of_nonneg_left ( inv_diff_bound ( f ( Nat.lcm d e ) ) ( g ( Nat.lcm d e ) ) K hf_pos hg_pos h_kinetic ) ( mul_nonneg ( abs_nonneg ( lam d ) ) ( abs_nonneg ( lam e ) ) ) using 1 ; ring_nf;
+  · rw [ ← abs_mul, ← abs_mul ] ; ring_nf;
   · ring
 
 /-! ## Step 3: Per-term bound for the main theorem -/
