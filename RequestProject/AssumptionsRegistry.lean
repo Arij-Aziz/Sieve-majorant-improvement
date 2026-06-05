@@ -272,43 +272,43 @@ def assumptionsRegistry : List RegistryEntry := [
   -- Dynamics
   { name := "CompatibleSystem"
     module := "Dynamics.ProfiniteState"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Compatible system of residues (profinite element)" },
   { name := "AdmissibleSet.complement_density"
     module := "Dynamics.SieveState"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Complement density + density = 1" },
   { name := "orbit_avg_eq_space_avg"
     module := "Dynamics.Spectrum"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Orbit average = space average for full orbit" },
 
   -- Hybrid
   { name := "KineticLaw"
     module := "Hybrid.KineticLaw"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Mesoscopic kinetic law interface" },
   { name := "ErgodicMajorant"
     module := "Hybrid.ErgodicMajorant"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Majorant constructed from kinetic data" },
   { name := "MajorantImprovement.noRegression"
     module := "Hybrid.ErgodicMajorant"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "No-regression theorem" },
 
   -- Models
   { name := "CyclicSieve"
     module := "Models.CyclicToy"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Cyclic toy sieve model" },
   { name := "RandomSieveModel"
     module := "Models.RandomSieve"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Random sieve model" },
   { name := "FunctionFieldSieveData"
     module := "Models.FunctionField"
-    status := .Scaffolding
+    status := .AssumedForProgram
     description := "Function-field sieve data" },
 
   -- Applications
