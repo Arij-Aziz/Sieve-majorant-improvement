@@ -182,7 +182,7 @@ eulerProduct_stability                  → [propext, Classical.choice, Quot.sou
 sieveH_stable                           → [propext, Classical.choice, Quot.sound]
 
 ── Instantiations ───────────────────────────────────────────────────────────
-selberg_restriction_lower_bound → [propext, Classical.choice, Quot.sound]
+selberg_concrete_restriction_bound      → [propext, Classical.choice, Quot.sound]
 selberg_additive_energy_explicit        → [propext, Classical.choice, Quot.sound]
 selberg_mass_energy_interval            → [propext, Classical.choice, Quot.sound]
 
@@ -220,6 +220,7 @@ RequestProject/
 ├── Audit.lean                        ← #print axioms for all 20 theorems
 ├── AssumptionsRegistry.lean          ← Manually maintained proof-status log
 ├── Main.lean                         ← Top-level imports
+├── Statements.lean                   ← Pure-Mathlib auditable statement file (sorry proofs)
 └── Core/
     ├── Basic.lean                    ← SieveData structure and multiplicativity
     ├── Majorant.lean                 ← Abstract majorant structure
