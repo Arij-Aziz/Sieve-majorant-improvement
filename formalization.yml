@@ -5,17 +5,8 @@ project:
   name: "SieveMajorantImprovement"
   authors:
     - "Arij Aziz"
-  license: "Apache-2.0"
-
-sources:
-  - title: "Rigidity of the Selberg Majorant: Stability, Restriction, and a Quadratic Form Identity with Machine-Verified Proofs"
-    authors:
-      - "Arij Aziz"
     id: "https://github.com/Arij-Aziz/Sieve-majorant-improvement"
-    type: "preprint"
-    license: "Apache-2.0"
-    author_contacted: "n/a"
-    prior_work: ""
+  license: "Apache-2.0"
 
 status:
   scope: >
