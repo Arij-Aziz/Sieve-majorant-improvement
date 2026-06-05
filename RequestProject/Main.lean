@@ -1,7 +1,4 @@
 -- Selberg Majorant Improvement: Machine-verified formalization
--- Paper: "Rigidity of the Selberg Majorant: Stability, Restriction,
---         and a Quadratic Form Identity with Machine-Verified Proofs"
---
 -- Axiom audit: RequestProject/Audit.lean
 -- All 20 main theorems depend only on [propext, Classical.choice, Quot.sound].
 -- Zero sorry.
