@@ -1,165 +1,345 @@
-name: SieveMajorantImprovement
-paper_title: "Rigidity of the Selberg Majorant: Stability, Restriction, and a Quadratic Form Identity with Machine-Verified Proofs"
-url: "https://github.com/Arij-Aziz/Sieve-majorant-improvement"
+# formalization.yaml (v0.3)
+version: "v0.3"
 
-toolchain: leanprover/lean4:v4.28.0
-mathlib_rev: v4.28.0
+project:
+  name: "SieveMajorantImprovement"
+  authors:
+    - "Arij Aziz"
+  license: "Apache-2.0"
 
-sorry_free: true
-axioms: [propext, Classical.choice, Quot.sound]
+sources:
+  - title: "Rigidity of the Selberg Majorant: Stability, Restriction, and a Quadratic Form Identity with Machine-Verified Proofs"
+    authors:
+      - "Arij Aziz"
+    id: "https://github.com/Arij-Aziz/Sieve-majorant-improvement"
+    type: "preprint"
+    license: "Apache-2.0"
+    author_contacted: "n/a"
+    prior_work: ""
 
-main_results:
+status:
+  scope: >
+    Four independent results about the single-prime Selberg majorant
+    ν(x) = 1 if d∤x, 1/2 if d∣x on Fin(d·m). (1) Mass and L² improvement
+    over the constant baseline, plus the quadratic form identity
+    ‖ν‖₂²/(d·m) = 1 − 3/(4d). (2) Abstract and concrete restriction lower
+    bounds via Cauchy–Schwarz, with Fourier restatement via Parseval.
+    (3) Kinetic propagation: pointwise Lipschitz bound on multiplicative
+    sieve densities under prime-level perturbation, with Euler product and
+    H-functional stability. (4) Lipschitz stability of the Selberg quadratic
+    form Q(λ,f) under the kinetic bound. Does NOT cover the full multi-prime
+    Selberg sieve, asymptotic results, or extremality of ν.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+  main_results:
 
-  - name: selbergComparison_massImprovement
-    file: RequestProject/Core/SelbergComparison.lean
-    description: >
-      For d ≥ 2, m ≥ 1, the Selberg-shaped majorant ν(x) = 1 if d∤x, ν(x) = 1/2 if d∣x
-      on Fin(d·m) has strictly smaller L¹ mass than the constant baseline ν₀ ≡ 1.
+    - declaration: selbergComparison_massImprovement
+      file: RequestProject/Core/SelbergComparison.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies:
+        - statement: "Selberg sieve mass bound: mass(ν) < N for the single-prime majorant"
+          source: "Iwaniec–Kowalski, Analytic Number Theory, Ch. 6"
 
-  - name: sieveMajorant_l2_improvement
-    file: RequestProject/Core/Weights/FourierConnection.lean
-    description: >
-      For d ≥ 2, m ≥ 1, the Selberg majorant has strictly smaller L² norm
-      than the constant baseline.
+    - declaration: sieveMajorant_l2_improvement
+      file: RequestProject/Core/Weights/FourierConnection.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: selbergComparison_dual_improvement
-    file: RequestProject/Core/Weights/FourierConnection.lean
-    description: >
-      For d ≥ 2, m ≥ 1, the Selberg majorant simultaneously achieves strict
-      mass and strict L² improvement over the constant baseline.
+    - declaration: selbergComparison_dual_improvement
+      file: RequestProject/Core/Weights/FourierConnection.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: sieveMajorant_l2NormSq_eq_selbergForm
-    file: RequestProject/Core/Weights/FourierConnection.lean
-    description: >
-      The normalized spatial L² norm satisfies ‖ν‖₂²/(d·m) = 1 − 3/(4d),
-      equal to the Selberg quadratic form Q(λ) at λ₁ = 1, λ_d = −1/2.
+    - declaration: sieveMajorant_l2NormSq_eq_selbergForm
+      file: RequestProject/Core/Weights/FourierConnection.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: restriction_lower_bound
-    file: RequestProject/Core/RestrictionLowerBound.lean
-    description: >
-      For any nonneg majorant ν on Fin(N) dominating the 0-1 indicator of a set S:
-      mass(ν)² · ‖ν‖₂² ≥ |S|⁴ / N.
-      Proved from Cauchy–Schwarz and pointwise domination alone; no Fourier hypothesis.
+    - declaration: restriction_lower_bound
+      file: RequestProject/Core/RestrictionLowerBound.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies:
+        - statement: "Cauchy–Schwarz inequality for finite sums"
+          source: "Mathlib: Finset.inner_mul_le_norm_mul_iff"
 
-  - name: sieve_additive_energy_lower
-    file: RequestProject/Core/RestrictionLowerBound.lean
-    description: >
-      For any nonneg majorant ν dominating indicator of S on Fin(N):
-      E(ν) ≥ targetMass⁴ / N³.
+    - declaration: sieve_additive_energy_lower
+      file: RequestProject/Core/RestrictionLowerBound.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: restriction_lower_bound_zero_mode
-    file: RequestProject/Core/RestrictionLowerBound.lean
-    description: >
-      Restatement of restriction_lower_bound in Fourier language via Parseval.
-      No new inequality is proved; the core bound is Cauchy–Schwarz only.
-      Shows the spatial bound is equivalent to a statement about zero-frequency
-      Fourier energy.
+    - declaration: restriction_lower_bound_zero_mode
+      file: RequestProject/Core/RestrictionLowerBound.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies:
+        - statement: "Parseval's identity for finite DFT"
+          source: "Mathlib: MeasureTheory.inner_eq_sum"
 
-  - name: selberg_restriction_lower_bound
-    file: RequestProject/Core/SelbergRestriction.lean
-    description: >
-      Concrete instantiation for the Selberg majorant:
-      mass(ν)² · ‖ν‖₂² ≥ (dm − m)⁴ / (dm).
+    - declaration: selberg_concrete_restriction_bound
+      file: RequestProject/Core/Weights/FourierConnection.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: selberg_additive_energy_explicit
-    file: RequestProject/Core/SelbergRestriction.lean
-    description: >
-      Additive energy lower bound for the Selberg majorant:
-      E(ν) ≥ (dm − m)⁴ / (dm)³.
+    - declaration: selberg_additive_energy_explicit
+      file: RequestProject/Core/SelbergRestriction.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: selberg_mass_energy_interval
-    file: RequestProject/Core/SelbergRestriction.lean
-    description: >
-      The mass-energy product of the Selberg majorant lies strictly between
-      the restriction lower bound and the baseline upper bound:
-      (dm−m)⁴/(dm) ≤ mass(ν)²·‖ν‖₂² < (dm)³.
-      This is the machine-verified form of the Section 6 interdependence claim.
+    - declaration: selberg_mass_energy_interval
+      file: RequestProject/Core/SelbergRestriction.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: perturbation_propagates
-    file: RequestProject/Core/KineticPropagation.lean
-    description: >
-      Kinetic Propagation Theorem: if |f(p) − g(p)| ≤ ε at every sieving prime,
-      then for squarefree d with ω(d) prime factors each bounded by M,
-      |f(d) − g(d)| ≤ ε · ω(d) · M^(ω(d)−1). Pointwise, exact, no big-O.
-      
-  - name: siftedSet_card_le_quadraticSum
-    file: RequestProject/Core/Weights/UpperBound.lean
-    description: >
-      The fundamental Selberg upper bound inequality: for any λ with λ₁ = 1
-      and 1 ∈ D, the sifted set satisfies |S(A,P)| ≤ Q_A(λ) where Q_A(λ)
-      = Σ_{n ∈ A} (Σ_{d ∈ D, d | gcd(n,P)} λ_d)². Proved for general
-      SieveData with arbitrarily many sieving primes. This is the machine-
-      verified form of the inequality |S(A,P)| ≤ Q_A(λ) in Iwaniec–Kowalski.
+    - declaration: perturbation_propagates
+      file: RequestProject/Core/KineticPropagation.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: weighted_remainder_bound
-    file: RequestProject/Core/Weights/UpperBound.lean
-    description: >
-      For any λ and remainder function R: Σ_d λ_d · R_d ≤ Σ_d |λ_d| · |R_d|.
-      Algebraic infrastructure lemma for separating the main term and error
-      term in the Selberg sieve upper bound.
-      
-  - name: eulerProduct_stability
-    file: RequestProject/Core/KineticPropagation.lean
-    description: >
-      The partial Euler product V(f,D) = Σ_{d∈D} 1/f(d) is stable under
-      prime-level perturbation, with explicit error bound.
+    - declaration: eulerProduct_stability
+      file: RequestProject/Core/KineticPropagation.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: sieveH_stable
-    file: RequestProject/Core/KineticPropagation.lean
-    description: >
-      The arithmetic H-functional H(f,D) = Σ (f(d)/d)·log(f(d)/d) is stable
-      under prime-level perturbation, with Lipschitz constant via the MVT.
+    - declaration: sieveH_stable
+      file: RequestProject/Core/KineticPropagation.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: Nat.Squarefree.lcm
-    file: RequestProject/Core/Weights/QuadFormStability.lean
-    description: >
-      The lcm of two squarefree natural numbers is squarefree.
-      Proved from first principles via prime factorization and max of valuations.
-      Infrastructure lemma for quadForm_kinetic_stability.
+    - declaration: siftedSet_card_le_quadraticSum
+      file: RequestProject/Core/Weights/UpperBound.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies:
+        - statement: "Selberg upper bound |S(A,P)| ≤ Q_A(λ)"
+          source: "Iwaniec–Kowalski, Analytic Number Theory, Ch. 6, eq. (6.5)"
 
-  - name: inv_diff_bound
-    file: RequestProject/Core/Weights/QuadFormStability.lean
-    description: >
-      For positive reals a, b: |1/a − 1/b| ≤ |a − b| / (a·b).
-      First-principles algebraic lemma; no Mathlib dependency.
+    - declaration: weighted_remainder_bound
+      file: RequestProject/Core/Weights/UpperBound.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: quadForm_term_diff
-    file: RequestProject/Core/Weights/QuadFormStability.lean
-    description: >
-      Pointwise bound on each (d,e) term of the quadratic form difference:
-      |λ_d·λ_e/f(n) − λ_d·λ_e/g(n)| ≤ |λ_d|·|λ_e|·|f(n)−g(n)|/(f(n)·g(n)).
+    - declaration: Nat.Squarefree.lcm
+      file: RequestProject/Core/Weights/QuadFormStability.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-  - name: quadForm_term_bound
-    file: RequestProject/Core/Weights/QuadFormStability.lean
-    description: >
-      Per-term bound for quadForm_kinetic_stability: handles the squarefree
-      case split and applies quadForm_term_diff at each (d,e) pair.
-      
-  - name: quadForm_kinetic_stability
-    file: RequestProject/Core/Weights/QuadFormStability.lean
-    description: >
-      The Selberg quadratic form Q(λ,f) is Lipschitz in f at the level of
-      squarefree divisors: if |f(n)−g(n)| is controlled by the kinetic
-      propagation bound at every squarefree n, then |Q(λ,f)−Q(λ,g)| is
-      bounded by an explicit double sum. This is the machine-verified
-      connection between Theorem 3 (kinetic propagation) and Theorem 1
-      (quadratic form identity) — the theorem that makes the
-      interdependence claim mathematically precise rather than narrative.
+    - declaration: inv_diff_bound
+      file: RequestProject/Core/Weights/QuadFormStability.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-audit:
-  file: RequestProject/Audit.lean
-  date: "2026-06-04"
-  theorem_count: 20
-  output: >
-    All 20 theorems verified with #print axioms.
-    Every theorem depends only on [propext, Classical.choice, Quot.sound].
-    Zero sorry.
+    - declaration: quadForm_term_diff
+      file: RequestProject/Core/Weights/QuadFormStability.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-dependencies:
-  - name: Mathlib
-    git: "https://github.com/leanprover-community/mathlib4.git"
-    rev: v4.28.0
+    - declaration: quadForm_term_bound
+      file: RequestProject/Core/Weights/QuadFormStability.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
 
-build:
-  - lake exe cache get
-  - lake build
+    - declaration: quadForm_kinetic_stability
+      file: RequestProject/Core/Weights/QuadFormStability.lean
+      sorry_count: 0
+      axioms: [propext, Classical.choice, Quot.sound]
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: agent
+      models:
+        - "Aristotle (primary)"
+        - "gpt-5.4"
+        - "gemini-3.1-pro"
+        - "sonar"
+        - "codex"
+      framework: "Human-AI collaboration; Perplexity (Aristotle) as primary agent"
+      tool_setup: >
+        Lean 4 + Mathlib v4.28.0. Codex used for spot-checking only.
+        All theorem statements and proof strategies decided by human author.
+        AI assistance used for tactic search, proof elaboration, and
+        infrastructure lemmas.
+      cost:
+        wall_time: "2 days"
+        spend_usd: "$10"
+        hardware: "API-only"
+      prompting_notes: >
+        Mathematical direction, theorem statements, novelty identification,
+        and scope decisions were made by the human author. AI was used for
+        tactic search and elaboration. All mathematical claims were verified
+        by the human author via lake build and #print axioms.
+  spend_usd: "$10"
+  notes: >
+    Human–AI collaboration. The human author drove all mathematical decisions.
+    AI models assisted with proof search and infrastructure. Final verification
+    done via lake build and Audit.lean (#print axioms, zero sorry).
+
+fidelity:
+  divergences: >
+    (1) Results cover the single-prime model only (one sieving prime d);
+    the full multi-prime Selberg sieve is not formalized.
+    (2) The restriction lower bound (Theorem 2) is a direct Cauchy–Schwarz
+    consequence and is not comparable to Green–Tao or Bera–Viswanadham
+    restriction theorems, which go in the opposite direction.
+    (3) No asymptotic results, no density estimates, no big-O.
+    (4) The Future/ directory contains scaffolding that is not part of the
+    proof chain and is excluded from the axiom audit.
+    (5) Nat.Squarefree.lcm was absent from Mathlib v4.28.0 and is proved
+    from first principles in this project.
+
+review:
+  status: "agent-reviewed, self-assessed"
+  reviewers:
+    - "Arij Aziz (author)"
+    - "Aristotle (AI agent)"
+    - "Codex (AI agent)"
+  notes: >
+    All 20 theorems verified via #print axioms in RequestProject/Audit.lean.
+    Axiom footprint confirmed as [propext, Classical.choice, Quot.sound] for
+    every result. Zero sorry. lake build passes cleanly on
+    leanprover/lean4:v4.28.0 + Mathlib v4.28.0. Pending human peer review.
+
+alignment:
+  namespace: "RequestProject"
+  statements:
+
+    - source: "Theorem 1 (mass improvement)"
+      lean: "selbergComparison_massImprovement"
+      module: "RequestProject.Core.SelbergComparison"
+      status: proved
+      note: "Single-prime model only."
+
+    - source: "Theorem 1 (L² improvement)"
+      lean: "sieveMajorant_l2_improvement"
+      module: "RequestProject.Core.Weights.FourierConnection"
+      status: proved
+      note: ""
+
+    - source: "Theorem 1 (dual improvement)"
+      lean: "selbergComparison_dual_improvement"
+      module: "RequestProject.Core.Weights.FourierConnection"
+      status: proved
+      note: "Conjunction of mass and L² improvement."
+
+    - source: "Theorem 1 (quadratic form identity ‖ν‖₂²/N = Q(λ))"
+      lean: "sieveMajorant_l2NormSq_eq_selbergForm"
+      module: "RequestProject.Core.Weights.FourierConnection"
+      status: proved
+      note: "Single-prime model; open for multi-prime."
+
+    - source: "Theorem 2 (abstract restriction lower bound)"
+      lean: "restriction_lower_bound"
+      module: "RequestProject.Core.RestrictionLowerBound"
+      status: proved
+      note: "Cauchy–Schwarz only; no Fourier hypothesis."
+
+    - source: "Theorem 2 (additive energy lower bound)"
+      lean: "sieve_additive_energy_lower"
+      module: "RequestProject.Core.RestrictionLowerBound"
+      status: proved
+      note: ""
+
+    - source: "Theorem 2 (Fourier zero-mode restatement)"
+      lean: "restriction_lower_bound_zero_mode"
+      module: "RequestProject.Core.RestrictionLowerBound"
+      status: proved
+      note: "Restatement via Parseval; not an independent Fourier proof."
+
+    - source: "Theorem 2 (Selberg concrete restriction bound)"
+      lean: "selberg_concrete_restriction_bound"
+      module: "RequestProject.Core.Weights.FourierConnection"
+      status: proved
+      note: ""
+
+    - source: "Theorem 2 (Selberg additive energy explicit)"
+      lean: "selberg_additive_energy_explicit"
+      module: "RequestProject.Core.SelbergRestriction"
+      status: proved
+      note: ""
+
+    - source: "Theorem 2 (mass-energy interval)"
+      lean: "selberg_mass_energy_interval"
+      module: "RequestProject.Core.SelbergRestriction"
+      status: proved
+      note: "Lower bound is Thm 2; upper bound (dm)³ is a loose numerical bound."
+
+    - source: "Selberg upper bound |S(A,P)| ≤ Q_A(λ)"
+      lean: "siftedSet_card_le_quadraticSum"
+      module: "RequestProject.Core.Weights.UpperBound"
+      status: proved
+      note: "General SieveData; arbitrary number of sieving primes."
+
+    - source: "Weighted remainder bound"
+      lean: "weighted_remainder_bound"
+      module: "RequestProject.Core.Weights.UpperBound"
+      status: proved
+      note: ""
+
+    - source: "Theorem 3 (kinetic propagation)"
+      lean: "perturbation_propagates"
+      module: "RequestProject.Core.KineticPropagation"
+      status: proved
+      note: "Pointwise, exact, no big-O. Independent of Theorems 1 and 2."
+
+    - source: "Theorem 3 (Euler product stability)"
+      lean: "eulerProduct_stability"
+      module: "RequestProject.Core.KineticPropagation"
+      status: proved
+      note: ""
+
+    - source: "Theorem 3 (H-functional stability)"
+      lean: "sieveH_stable"
+      module: "RequestProject.Core.KineticPropagation"
+      status: proved
+      note: ""
+
+    - source: "Theorem 4 (Nat.Squarefree.lcm)"
+      lean: "Nat.Squarefree.lcm"
+      module: "RequestProject.Core.Weights.QuadFormStability"
+      status: proved
+      note: "Absent from Mathlib v4.28.0; proved here."
+
+    - source: "Theorem 4 (inverse difference bound)"
+      lean: "inv_diff_bound"
+      module: "RequestProject.Core.Weights.QuadFormStability"
+      status: proved
+      note: ""
+
+    - source: "Theorem 4 (quadratic form term difference)"
+      lean: "quadForm_term_diff"
+      module: "RequestProject.Core.Weights.QuadFormStability"
+      status: proved
+      note: ""
+
+    - source: "Theorem 4 (quadratic form term bound)"
+      lean: "quadForm_term_bound"
+      module: "RequestProject.Core.Weights.QuadFormStability"
+      status: proved
+      note: ""
+
+    - source: "Theorem 4 (quadratic form Lipschitz stability)"
+      lean: "quadForm_kinetic_stability"
+      module: "RequestProject.Core.Weights.QuadFormStability"
+      status: proved
+      note: "Proof-chain link between Theorems 1 and 3,  providing the structural link, though no explicit perturbation is instantiated in the current scope."
