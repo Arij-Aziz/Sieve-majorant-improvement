@@ -3,7 +3,7 @@
 --         and a Quadratic Form Identity with Machine-Verified Proofs"
 --
 -- Axiom audit: RequestProject/Audit.lean
--- All 13 main theorems depend only on [propext, Classical.choice, Quot.sound].
+-- All 20 main theorems depend only on [propext, Classical.choice, Quot.sound].
 -- Zero sorry.
 --
 -- Future/ contains scaffolding for future work.
